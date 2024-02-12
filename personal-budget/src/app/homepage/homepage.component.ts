@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Chart } from 'chart.js/auto';
+import { DataServiceService } from '../data-service.service';
 
 @Component({
   selector: 'pb-homepage',
@@ -31,15 +32,17 @@ export class HomepageComponent implements AfterViewInit {
     ],
     labels: [],
   };
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private dataService: DataServiceService
+  ) {}
 
   ngAfterViewInit(): void {
-    this.http.get('http://localhost:3000/budget').subscribe((res: any) => {
+    this.dataService.fetchData().subscribe((res: any) => {
       for (var i = 0; i < res.myBudget.length; i++) {
         this.dataSource.labels.push(res.myBudget[i].title);
         this.dataSource.datasets[0].data.push(res.myBudget[i].budget);
       }
-
       this.createChart();
     });
   }

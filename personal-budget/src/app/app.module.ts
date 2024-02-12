@@ -15,6 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { P404Component } from './p404/p404.component';
+import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
+import { ContactComponent } from './contact/contact.component';
+import { DonutchartComponent } from './donutchart/donutchart.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,9 @@ import { P404Component } from './p404/p404.component';
     AboutComponent,
     LoginComponent,
     P404Component,
+    BreadcrumbsComponent,
+    ContactComponent,
+    DonutchartComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [provideClientHydration()],

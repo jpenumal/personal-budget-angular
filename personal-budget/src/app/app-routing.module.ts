@@ -5,12 +5,17 @@ import { AboutComponent } from './about/about.component';
 import { MenuComponent } from './menu/menu.component';
 import { LoginComponent } from './login/login.component';
 import { P404Component } from './p404/p404.component';
+import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginComponent },
   { path: 'main', component: MenuComponent },
+  {
+    path: 'contact',
+    component: ContactComponent,
+  },
   { path: '**', component: P404Component },
 ];
 
